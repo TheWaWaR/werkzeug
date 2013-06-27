@@ -66,11 +66,12 @@ hold our management utilities later.
 Part 1: The WSGI Application
 ============================
 
-Unlike Django or other frameworks, Werkzeug operates directly on the WSGI
+Unlike Django or other frameworks, Werkzeug operates *directly* on the WSGI
 layer.  There is no fancy magic that implements the central WSGI application
 for you.  As a result of that the first thing you will do every time you write
 a Werkzeug application is implementing this basic WSGI application object.
 This can now either be a function or, even better, a callable class.
+.. @weet: we need implement WSGI application by ourself.
 
 A callable class has huge advantages over a function.  For one you can pass
 it some configuration parameters and furthermore you can use inline WSGI

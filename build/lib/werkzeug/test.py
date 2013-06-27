@@ -225,7 +225,7 @@ class EnvironBuilder(object):
     :param method: the HTTP method to use, defaults to `GET`.
     :param input_stream: an optional input stream.  Do not specify this and
                          `data`.  As soon as an input stream is set you can't
-                         modify :attr:`args` and :attr:`files` unless you          # @weet: Interesting!
+                         modify :attr:`args` and :attr:`files` unless you
                          set the :attr:`input_stream` to `None` again.
     :param content_type: The content type for the request.  As of 0.5 you
                          don't have to provide this when specifying files
@@ -300,13 +300,12 @@ class EnvironBuilder(object):
 
         if data:
             if input_stream is not None:
-                raise TypeError('can\'t provide input stream and data')  # @weet: `input_stream` and `data` can not *unNone* at the same time.
+                raise TypeError('can\'t provide input stream and data')
             if isinstance(data, basestring):
                 self.input_stream = StringIO(data)
                 if self.content_length is None:
                     self.content_length = len(data)
             else:
-                # @weet: `file` or `input field` in `data`                
                 for key, value in _iter_data(data):
                     if isinstance(value, (tuple, dict)) or \
                        hasattr(value, 'read'):

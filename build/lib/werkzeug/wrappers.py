@@ -217,7 +217,6 @@ class BaseRequest(object):
         :return: request object
         """
         from werkzeug.test import EnvironBuilder
-        # @weet: `kwargs.pop` has side-effect
         charset = kwargs.pop('charset', cls.charset)
         builder = EnvironBuilder(*args, **kwargs)
         try:
@@ -778,7 +777,7 @@ class BaseResponse(object):
             from warnings import warn
             warn(DeprecationWarning('charset was deprecated and is ignored.'),
                  stacklevel=2)
-        charset = self.charset  # @weet: For function cache?
+        charset = self.charset
         if __debug__:
             _warn_if_string(self.response)
         for item in self.response:
@@ -971,11 +970,11 @@ class BaseResponse(object):
         return ClosingIterator(self.iter_encoded(), self.close)
 
     def get_wsgi_response(self, environ):
-        """Returns the final WSGI response as tuple.  The first item in         # @weet: *final WSGI response*
+        """Returns the final WSGI response as tuple.  The first item in
         the tuple is the application iterator, the second the status and
         the third the list of headers.  The response returned is created
         specially for the given environment.  For example if the request
-        method in the WSGI environment is ``'HEAD'`` the response will          # @weet: The `HEAD` method's meaning
+        method in the WSGI environment is ``'HEAD'`` the response will
         be empty and only the headers and status code will be present.
 
         .. versionadded:: 0.6

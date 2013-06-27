@@ -266,7 +266,7 @@ class LocalProxy(object):
         from werkzeug import Local
         l = Local()
 
-        # these are proxies                             # @weet: Hardly understanding
+        # these are proxies
         request = l('request')
         user = l('user')
 
@@ -275,7 +275,7 @@ class LocalProxy(object):
         _response_local = LocalStack()
 
         # this is a proxy
-        response = _response_local()                    # @weet: Hardly understanding
+        response = _response_local()
 
     Whenever something is bound to l.user / l.request the proxy objects
     will forward all operations.  If no object is bound a :exc:`RuntimeError`

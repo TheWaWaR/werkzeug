@@ -77,7 +77,7 @@ class cached_property(object):
         value = obj.__dict__.get(self.__name__, _missing)
         if value is _missing:
             value = self.func(obj)
-            obj.__dict__[self.__name__] = value                 # @weet: Just save the value in `obj.__dict__`
+            obj.__dict__[self.__name__] = value
         return value
 
 

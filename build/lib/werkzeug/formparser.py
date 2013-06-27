@@ -4,7 +4,7 @@
     ~~~~~~~~~~~~~~~~~~~
 
     This module implements the form parsing.  It supports url-encoded forms
-    as well as non-nested multipart uploads.                                    # @weet: Limitation: non-nested multipart uploads. Wait a minute, what's *multipart uploads* for??
+    as well as non-nested multipart uploads.
 
     :copyright: (c) 2010 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.

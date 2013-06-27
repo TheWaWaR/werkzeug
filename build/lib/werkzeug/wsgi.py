@@ -470,7 +470,7 @@ class ClosingIterator(object):
     """The WSGI specification requires that all middlewares and gateways
     respect the `close` callback of an iterator.  Because it is useful to add
     another close action to a returned iterator and adding a custom iterator
-    is a boring task this class can be used for that::                          # @weet: Why adding a custom iterator is a boring task?
+    is a boring task this class can be used for that::
 
         return ClosingIterator(app(environ, start_response), [cleanup_session,
                                                               cleanup_locals])

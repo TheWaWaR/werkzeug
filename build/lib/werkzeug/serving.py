@@ -133,7 +133,7 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
                     exc_info = None
             elif headers_set:
                 raise AssertionError('Headers already set')
-            headers_set[:] = [status, response_headers] # @weet: Intertesting!!!
+            headers_set[:] = [status, response_headers]
             return write
 
         def execute(app):

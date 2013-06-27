@@ -57,7 +57,7 @@
 
     The first argument to bind is the server name *without* the subdomain.
     Per default it will assume that the script is mounted on the root, but
-    often that's not the case so you can provide the real mount point as      # @weet: What is *mount point* ?
+    often that's not the case so you can provide the real mount point as
     second argument:
 
     >>> c = m.bind('example.com', '/applications/example')
@@ -73,7 +73,7 @@
     ('static/index', {})
     >>> c.match("/about")
     ('static/about', {})
-    >>> c = m.bind('example.com', '/', 'kb')            # @weet: Interesting!
+    >>> c = m.bind('example.com', '/', 'kb')
     >>> c.match("/")
     ('kb/index', {})
     >>> c.match("/browse/42/23")

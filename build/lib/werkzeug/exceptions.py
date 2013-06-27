@@ -412,7 +412,7 @@ default_exceptions = {}
 __all__ = ['HTTPException']
 
 def _find_exceptions():
-    for name, obj in globals().iteritems(): # @weet: Well, inject classes this way...
+    for name, obj in globals().iteritems():
         try:
             if getattr(obj, 'code', None) is not None:
                 default_exceptions[obj.code] = obj
